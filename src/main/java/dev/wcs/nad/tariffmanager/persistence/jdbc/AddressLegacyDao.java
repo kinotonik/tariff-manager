@@ -43,8 +43,13 @@ public class AddressLegacyDao {
                      Read results from ResultSet
                      */
 
-                    resultSet.getString(1);
-                    return Optional.of(new Address());
+                    Address address = new Address();
+                    address.setId(id);
+                    address.getCity();
+                    address.getPostalcode();
+                    address.getStreet();
+                    address.getNumber();
+                    return Optional.of(address);
                 }
             }
         } catch (SQLException sqlException) {

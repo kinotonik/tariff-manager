@@ -20,15 +20,15 @@ public class AddressJdbcTest {
 
     @Test
     public void shouldLoadAddressWithId2() {
-        Optional<Address> firstAddress = addressLegacyDao.getByIdJava7Syntax(1);
+        Optional<Address> firstAddress = addressLegacyDao.getByIdJava7Syntax(2);
         assertThat(firstAddress.isEmpty()).isFalse();
         assertThat(firstAddress.get().getId().toString().equals("2")).isTrue();
     }
 
     @Test
     public void shouldReturnEmptyIfAddressNotFound() {
-        Optional<Address> firstAddress = addressLegacyDao.getByIdJava7Syntax(1);
+        Optional<Address> firstAddress = addressLegacyDao.getByIdJava7Syntax(49);
         assertThat(firstAddress.isEmpty()).isTrue();
-        assertThat(firstAddress.get().getId().toString().equals("49")).isTrue();
+
     }
 }
